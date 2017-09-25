@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
           #3.  
           s.summary         = "'CoreUtilFramework' is bunch of files that consists util classes for Swift language. Extensions, Delegates, Custom Componenets..."
           #4.
-          s.homepage        = ""
+          s.homepage        = "https://github.com/akarayelli/CoreUtilFramework"
           #5.
           s.license              = "MIT"
           #6.
