@@ -14,7 +14,7 @@ public class BlockTapGestureRecognizer: UITapGestureRecognizer {
         self.addTarget(self, action: #selector(handleTap(tap:)))
     }
 
-    func handleTap(tap: UITapGestureRecognizer) {
+    @objc func handleTap(tap: UITapGestureRecognizer) {
         tapAction?(tap)
     }
 

@@ -12,7 +12,7 @@ public class BlockPinchGestureRecognizer: UIPinchGestureRecognizer {
         self.addTarget(self, action: #selector(handlePinch(pinch:)))
     }
 
-    func handlePinch(pinch: UIPinchGestureRecognizer) {
+    @objc func handlePinch(pinch: UIPinchGestureRecognizer) {
         pinchAction?(pinch)
     }
 

@@ -21,7 +21,7 @@ public extension String {
     public subscript(integerRange: Range<Int>) -> String {
         let start = index(startIndex, offsetBy: integerRange.lowerBound)
         let end = index(startIndex, offsetBy: integerRange.upperBound)
-        return self[start..<end]
+        return String(self[start..<end])
     }
 
 }
@@ -61,7 +61,7 @@ public extension String {
     }
     
     public var length: Int {
-        return self.characters.count
+        return self.count
     }
 
     public func isOnlyEmptySpacesAndNewLineCharacters() -> Bool {
@@ -105,7 +105,7 @@ public extension String {
 
         let text = self
         if let detector = detector {
-            detector.enumerateMatches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count), using: {
+            detector.enumerateMatches(in: text, options: [], range: NSRange(location: 0, length: text.count), using: {
                 (result: NSTextCheckingResult?, flags: NSRegularExpression.MatchingFlags, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
                 if let result = result,
                     let url = result.url {
@@ -179,8 +179,8 @@ public extension String {
     }
     
     
-    public func isEmptyOrNil() -> Bool!{
-        if ( self == nil || self == ""){
+    public func isEmpty() -> Bool!{
+        if ( self == ""){
             return true
         }
         

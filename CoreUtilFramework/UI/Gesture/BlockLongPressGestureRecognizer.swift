@@ -18,7 +18,7 @@ public class BlockLongPressGestureRecognizer: UILongPressGestureRecognizer {
         self.addTarget(self, action: #selector(handleLongPress(longPress:)))
     }
 
-    func handleLongPress(longPress: UILongPressGestureRecognizer) {
+    @objc func handleLongPress(longPress: UILongPressGestureRecognizer) {
         longPressAction?(longPress)
     }
 

@@ -13,7 +13,7 @@ public class BlockPanGestureRecognizer: UIPanGestureRecognizer {
         self.addTarget(self, action: #selector(handlePan(pan:)))
     }
 
-    func handlePan(pan: UIPanGestureRecognizer) {
+    @objc func handlePan(pan: UIPanGestureRecognizer) {
         panAction?(pan)
     }
 

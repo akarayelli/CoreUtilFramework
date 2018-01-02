@@ -21,7 +21,7 @@ public class BlockSwipeGestureRecognizer: UISwipeGestureRecognizer {
         self.addTarget(self, action: #selector(handleSwipe(swipe:)))
     }
 
-    func handleSwipe(swipe: UISwipeGestureRecognizer) {
+    @objc func handleSwipe(swipe: UISwipeGestureRecognizer) {
         swipeAction?(swipe)
     }
 

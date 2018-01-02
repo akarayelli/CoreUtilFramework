@@ -56,7 +56,7 @@ extension UILabel{
         let minFontScale = minFontScale.isNaN ? 0.1 : minFontScale
         let minimumFontSize = maxFontSize * minFontScale
         let rectSize = rectSize ?? bounds.size
-        guard string.characters.count != 0 else {
+        guard string.count != 0 else {
             return self.font.pointSize
         }
         
@@ -73,9 +73,9 @@ extension UILabel{
 
 private extension UILabel {
     
-    func currentAttributedStringAttributes() -> [String : Any] {
-        var newAttributes = [String: Any]()
-        attributedText?.enumerateAttributes(in: NSRange(0..<(text?.characters.count ?? 0)), options: .longestEffectiveRangeNotRequired, using: { attributes, range, stop in
+    func currentAttributedStringAttributes() -> [NSAttributedStringKey : Any] {
+        var newAttributes = [NSAttributedStringKey: Any]()
+        attributedText?.enumerateAttributes(in: NSRange(0..<(text?.count ?? 0)), options: .longestEffectiveRangeNotRequired, using: { attributes, range, stop in
             newAttributes = attributes
         })
         return newAttributes
@@ -94,7 +94,7 @@ private extension UILabel {
     func binarySearch(string: String, minSize: CGFloat, maxSize: CGFloat, size: CGSize, constraintSize: CGSize) -> CGFloat {
         let fontSize = (minSize + maxSize) / 2
         var attributes = currentAttributedStringAttributes()
-        attributes[NSFontAttributeName] = font.withSize(fontSize)
+        attributes[NSAttributedStringKey.font] = font.withSize(fontSize)
         
         let rect = string.boundingRect(with: constraintSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         let state = numberOfLines == 1 ? singleLineSizeState(rect: rect, size: size) : multiLineSizeState(rect: rect, size: size)

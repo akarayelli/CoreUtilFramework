@@ -38,7 +38,7 @@ public class BlockNotification {
 
     // MARK - Action
 
-    dynamic func handleNotification(notification: NSNotification) {
+    @objc dynamic func handleNotification(notification: NSNotification) {
         closure(notification)
     }
 

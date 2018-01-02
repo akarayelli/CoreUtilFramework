@@ -56,7 +56,7 @@ public extension Array {
     public mutating func shuffle() {
         for i in (1 ..< count).reversed() {
             let j = Int.random(max: i - 1)
-            swap(&self[i], &self[j])
+            self.swapAt(i, j)
         }
     }
     

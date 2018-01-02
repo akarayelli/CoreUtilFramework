@@ -44,7 +44,7 @@ class UIBaseTextField: UITextField,UITextFieldDelegate {
         
         
         //eğer charLimit 0 ise, herhangi bir kontrol yapılmayacak bu alanla ilgili, 0 dan büyükse kontrol yapılacak.
-        if(self.charLimit > 0 &&  self.charLimit == textField.text?.characters.count){
+        if(self.charLimit > 0 &&  self.charLimit == textField.text?.count){
             return false
         }
         
