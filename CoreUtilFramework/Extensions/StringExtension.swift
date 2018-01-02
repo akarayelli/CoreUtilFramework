@@ -197,4 +197,20 @@ extension String {
         }
         return words
     }
+    
+    public func substring(start: Int, end: Int) -> String
+    {
+        if (start < 0 || start > self.count) {
+            return ""
+        }
+        else if end < 0 || end > self.count {
+            return ""
+        }
+        
+        let startIndex = self.index(self.startIndex, offsetBy: start)
+        let endIndex = self.index(self.startIndex, offsetBy: end)
+        
+        return String(self[startIndex..<endIndex])
+    }
+    
 }

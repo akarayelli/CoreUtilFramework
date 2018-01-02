@@ -74,7 +74,7 @@ public extension UIView {
 
 
 extension UIView {
-    func getAllSubviewsRecursively() -> [AnyObject] {
+    public func getAllSubviewsRecursively() -> [AnyObject] {
         var allSubviews: [AnyObject] = []
         
         for subview in self.subviews {
@@ -84,7 +84,29 @@ extension UIView {
         
         return allSubviews
     }
-    
-     
 }
+
+extension UIView {
+    
+    public var width: CGFloat {
+        return self.frame.size.width
+    }
+    
+    public var height: CGFloat {
+        return self.frame.size.height
+    }
+    
+    public var xPos: CGFloat {
+        return self.frame.origin.x
+    }
+    
+    public var yPos: CGFloat {
+        return self.frame.origin.y
+    }
+    
+    public var yBottom: CGFloat {
+        return self.frame.origin.y + self.frame.size.height
+    }
+}
+
 
