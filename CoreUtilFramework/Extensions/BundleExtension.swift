@@ -33,6 +33,10 @@ public extension Bundle {
     public var secureCertificateName: String {
         return string(for: "SSLCertificateName")
     }
+
+    public var adMobAppId: String {
+        return string(for: "AdMod_APP_ID")
+    }
     
     public var databaseName: String {
         return string(for: "DBName")
