@@ -189,7 +189,7 @@ public extension String {
 }
 
 extension String {
-    var words: [String] {
+    public var words: [String] {
         var words: [String] = []
         enumerateSubstrings(in: startIndex..<endIndex, options: .byWords) { word,_,_,_ in
             guard let word = word else { return }
