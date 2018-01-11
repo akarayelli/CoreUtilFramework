@@ -24,5 +24,26 @@ public extension Int {
     public static func random(min: Int = 0, max: Int) -> Int {
         return Int(arc4random_uniform(UInt32((max - min) + 1))) + min
     }
+    
+    public static func generateNumbers(repetitions: Int, maxValue: Int) -> [Int] {
+        
+        var numbers: [Int] = []
+        
+        guard maxValue >= repetitions else {
+            fatalError("maxValue must be >= repetitions for the numbers to be unique")
+        }
+        
+        numbers = []
+        
+        for _ in 1...repetitions {
+            var n: Int
+            repeat {
+                n = .random(max: maxValue)
+            } while numbers.contains(n)
+            numbers.append(n)
+        }
+        
+        return numbers
+    }
 
 }
