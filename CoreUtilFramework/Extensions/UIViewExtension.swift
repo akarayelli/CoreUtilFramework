@@ -109,4 +109,18 @@ extension UIView {
     }
 }
 
+extension UIView{
+    
+    public func shake(duration: CFTimeInterval) {
+        
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = duration
+        animation.values = [-10.0, 10.0, -10.0, 10.0, -5.0, 5.0, -2.5, 2.5, 0.0 ]
+        layer.add(animation, forKey: "customShakeAnimation")
+        
+    }
+    
+}
+
 
