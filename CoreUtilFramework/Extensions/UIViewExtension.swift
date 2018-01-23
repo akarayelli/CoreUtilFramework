@@ -121,6 +121,14 @@ extension UIView{
         
     }
     
+    func textDropShadow(radius: CGFloat = 2.0, opacity: Float = 0.2, offsetWidth: Int = 1, offsetHeight: Int = 2) {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = CGSize(width: offsetWidth, height: offsetHeight)
+        
+    }
+    
 }
 
 
