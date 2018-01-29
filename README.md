@@ -2,7 +2,7 @@
 Util classes for Swift language
 
 # CocoaPods
-pod ‘CoreUtilFramework’, :git => ‘https://github.com/akarayelli/CoreUtilFramework.git’, :tag => ‘2.0.6’
+pod ‘CoreUtilFramework’, :git => ‘https://github.com/akarayelli/CoreUtilFramework.git’, :tag => ‘2.0.8’
 
 # Referance
 https://github.com/tbaranes/SwiftyUtils
