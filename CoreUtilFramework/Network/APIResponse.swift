@@ -2,21 +2,21 @@
 import Foundation
 
 struct ApiError {
-    var error: NSError?
-    var message: String?
+    public var error: NSError?
+    public var message: String?
     
-    var code : Int?
+    public var code : Int?
     
-    init (){
+    public init (){
     }
     
-    init(message : String, error : NSError? = nil){
+    public init(message : String, error : NSError? = nil){
         self.message = message
         self.error = error ?? nil
         
     }
     
-    var description: String {
+    public var description: String {
         if let error = error {
             return error.logicalErrorDescription
         }
@@ -28,22 +28,22 @@ struct ApiError {
 }
 
 struct ApiWarning {
-    var message: String?
+    public var message: String?
     
-    var code : Int?
+    public var code : Int?
     
-    var description: String {
+    public var description: String {
         if let message = message {
             return message
         }
         return "ApiWarning"
     }
     
-    init(message : String){
+    public init(message : String){
         self.message = message
     }
     
-    init() {}
+    public init() {}
 }
 
 
