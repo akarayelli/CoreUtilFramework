@@ -1,7 +1,7 @@
 import SystemConfiguration
 
 open class Reachability {
-    static func isConnectedToNetwork() -> Bool {
+    public  static func isConnectedToNetwork() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
@@ -25,7 +25,7 @@ open class Reachability {
         return (isReachable && !needsConnection)
     }
     
-    static func getNetworkState() -> NetworkState{
+    public static func getNetworkState() -> NetworkState{
         if(isConnectedToNetwork()){
             return .online
         }

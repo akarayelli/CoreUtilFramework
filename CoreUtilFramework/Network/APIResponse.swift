@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct ApiError {
+public struct ApiError {
     public var error: NSError?
     public var message: String?
     
@@ -27,7 +27,7 @@ struct ApiError {
     }
 }
 
-struct ApiWarning {
+public struct ApiWarning {
     public var message: String?
     
     public var code : Int?
