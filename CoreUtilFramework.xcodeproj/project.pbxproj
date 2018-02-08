@@ -67,6 +67,8 @@
 		AA10FF991F78E9D600BC353E /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10FF721F78E9D600BC353E /* BoolExtension.swift */; };
 		AA10FF9A1F78E9D600BC353E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10FF731F78E9D600BC353E /* ArrayExtension.swift */; };
 		AA10FF9C1F78E9E500BC353E /* ApplicationStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10FF9B1F78E9E500BC353E /* ApplicationStateEnum.swift */; };
+		AA929D9F202C673400BBC190 /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA929D9D202C673300BBC190 /* NSManagedObjectContextExtension.swift */; };
+		AA929DA0202C673400BBC190 /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA929D9E202C673300BBC190 /* NSManagedObjectExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		AA10FF721F78E9D600BC353E /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		AA10FF731F78E9D600BC353E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = Extensions/ArrayExtension.swift; sourceTree = "<group>"; };
 		AA10FF9B1F78E9E500BC353E /* ApplicationStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationStateEnum.swift; path = Enum/ApplicationStateEnum.swift; sourceTree = "<group>"; };
+		AA929D9D202C673300BBC190 /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSManagedObjectContextExtension.swift; path = Extensions/NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
+		AA929D9E202C673300BBC190 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSManagedObjectExtension.swift; path = Extensions/NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,45 +190,47 @@
 		AA10FF1E1F78E92600BC353E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AA10FF4D1F78E9D600BC353E /* UserDefaultsExtension.swift */,
-				AA10FF4E1F78E9D600BC353E /* URLExtension.swift */,
-				AA10FF4F1F78E9D600BC353E /* UIViewExtension.swift */,
-				AA10FF501F78E9D600BC353E /* UIViewControllerExtension.swift */,
-				AA10FF511F78E9D600BC353E /* UITableViewExtension.swift */,
-				AA10FF521F78E9D600BC353E /* UISwitchExtension.swift */,
-				AA10FF531F78E9D600BC353E /* UIStoryboardExtension.swift */,
-				AA10FF541F78E9D600BC353E /* UIScrollViewExtension.swift */,
-				AA10FF551F78E9D600BC353E /* UIScreenExtension.swift */,
-				AA10FF561F78E9D600BC353E /* UILabelExtension.swift */,
-				AA10FF571F78E9D600BC353E /* UIImageExtension.swift */,
-				AA10FF581F78E9D600BC353E /* UIDeviceExtension.swift */,
-				AA10FF591F78E9D600BC353E /* UICollectionViewCellExtension.swift */,
-				AA10FF5A1F78E9D600BC353E /* UIButtonExtension.swift */,
-				AA10FF5B1F78E9D600BC353E /* UIApplicationExtension.swift */,
-				AA10FF5C1F78E9D600BC353E /* UIAlertControllerExtension.swift */,
-				AA10FF5D1F78E9D600BC353E /* TimerExtension.swift */,
-				AA10FF5E1F78E9D600BC353E /* StringExtension.swift */,
-				AA10FF5F1F78E9D600BC353E /* NSRangeExtension.swift */,
-				AA10FF601F78E9D600BC353E /* NSObjectExtension.swift */,
-				AA10FF611F78E9D600BC353E /* NSMutableAttributedStringExtension.swift */,
-				AA10FF621F78E9D600BC353E /* NSLayoutConstraintsExtension.swift */,
-				AA10FF631F78E9D600BC353E /* NSErrorExtension.swift */,
-				AA10FF641F78E9D600BC353E /* NotificationCenterExtension.swift */,
-				AA10FF651F78E9D600BC353E /* IntExtension.swift */,
-				AA10FF661F78E9D600BC353E /* HTTPStatusExtension.swift */,
-				AA10FF671F78E9D600BC353E /* FloatExtension.swift */,
-				AA10FF681F78E9D600BC353E /* FileManagerExtension.swift */,
-				AA10FF691F78E9D600BC353E /* DoubleExtension.swift */,
-				AA10FF6A1F78E9D600BC353E /* DictionaryExtension.swift */,
-				AA10FF6B1F78E9D600BC353E /* DateExtension.swift */,
-				AA10FF6C1F78E9D600BC353E /* DateCalendarExtension.swift */,
-				AA10FF6D1F78E9D600BC353E /* DataExtension.swift */,
-				AA10FF6E1F78E9D600BC353E /* ColorExtension.swift */,
-				AA10FF6F1F78E9D600BC353E /* CollectionTypeExtension.swift */,
-				AA10FF701F78E9D600BC353E /* CGFloatLiteral.swift */,
-				AA10FF711F78E9D600BC353E /* BundleExtension.swift */,
-				AA10FF721F78E9D600BC353E /* BoolExtension.swift */,
 				AA10FF731F78E9D600BC353E /* ArrayExtension.swift */,
+				AA10FF721F78E9D600BC353E /* BoolExtension.swift */,
+				AA10FF711F78E9D600BC353E /* BundleExtension.swift */,
+				AA10FF701F78E9D600BC353E /* CGFloatLiteral.swift */,
+				AA10FF6F1F78E9D600BC353E /* CollectionTypeExtension.swift */,
+				AA10FF6E1F78E9D600BC353E /* ColorExtension.swift */,
+				AA10FF6D1F78E9D600BC353E /* DataExtension.swift */,
+				AA10FF6C1F78E9D600BC353E /* DateCalendarExtension.swift */,
+				AA10FF6B1F78E9D600BC353E /* DateExtension.swift */,
+				AA10FF6A1F78E9D600BC353E /* DictionaryExtension.swift */,
+				AA10FF691F78E9D600BC353E /* DoubleExtension.swift */,
+				AA10FF681F78E9D600BC353E /* FileManagerExtension.swift */,
+				AA10FF671F78E9D600BC353E /* FloatExtension.swift */,
+				AA10FF661F78E9D600BC353E /* HTTPStatusExtension.swift */,
+				AA10FF651F78E9D600BC353E /* IntExtension.swift */,
+				AA10FF641F78E9D600BC353E /* NotificationCenterExtension.swift */,
+				AA10FF631F78E9D600BC353E /* NSErrorExtension.swift */,
+				AA10FF621F78E9D600BC353E /* NSLayoutConstraintsExtension.swift */,
+				AA929D9D202C673300BBC190 /* NSManagedObjectContextExtension.swift */,
+				AA929D9E202C673300BBC190 /* NSManagedObjectExtension.swift */,
+				AA10FF611F78E9D600BC353E /* NSMutableAttributedStringExtension.swift */,
+				AA10FF601F78E9D600BC353E /* NSObjectExtension.swift */,
+				AA10FF5F1F78E9D600BC353E /* NSRangeExtension.swift */,
+				AA10FF5E1F78E9D600BC353E /* StringExtension.swift */,
+				AA10FF5D1F78E9D600BC353E /* TimerExtension.swift */,
+				AA10FF5C1F78E9D600BC353E /* UIAlertControllerExtension.swift */,
+				AA10FF5B1F78E9D600BC353E /* UIApplicationExtension.swift */,
+				AA10FF5A1F78E9D600BC353E /* UIButtonExtension.swift */,
+				AA10FF591F78E9D600BC353E /* UICollectionViewCellExtension.swift */,
+				AA10FF581F78E9D600BC353E /* UIDeviceExtension.swift */,
+				AA10FF571F78E9D600BC353E /* UIImageExtension.swift */,
+				AA10FF561F78E9D600BC353E /* UILabelExtension.swift */,
+				AA10FF551F78E9D600BC353E /* UIScreenExtension.swift */,
+				AA10FF541F78E9D600BC353E /* UIScrollViewExtension.swift */,
+				AA10FF531F78E9D600BC353E /* UIStoryboardExtension.swift */,
+				AA10FF521F78E9D600BC353E /* UISwitchExtension.swift */,
+				AA10FF511F78E9D600BC353E /* UITableViewExtension.swift */,
+				AA10FF501F78E9D600BC353E /* UIViewControllerExtension.swift */,
+				AA10FF4F1F78E9D600BC353E /* UIViewExtension.swift */,
+				AA10FF4E1F78E9D600BC353E /* URLExtension.swift */,
+				AA10FF4D1F78E9D600BC353E /* UserDefaultsExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -446,7 +452,9 @@
 				AA10FF7F1F78E9D600BC353E /* UIDeviceExtension.swift in Sources */,
 				AA10FF831F78E9D600BC353E /* UIAlertControllerExtension.swift in Sources */,
 				AA10FF991F78E9D600BC353E /* BoolExtension.swift in Sources */,
+				AA929D9F202C673400BBC190 /* NSManagedObjectContextExtension.swift in Sources */,
 				AA10FF971F78E9D600BC353E /* CGFloatLiteral.swift in Sources */,
+				AA929DA0202C673400BBC190 /* NSManagedObjectExtension.swift in Sources */,
 				AA10FF7B1F78E9D600BC353E /* UIScrollViewExtension.swift in Sources */,
 				AA10FF7E1F78E9D600BC353E /* UIImageExtension.swift in Sources */,
 				AA10FF801F78E9D600BC353E /* UICollectionViewCellExtension.swift in Sources */,
