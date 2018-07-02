@@ -4,13 +4,13 @@ import UIKit
 
 open class UINumberTextField:UIPaddingTextField{
 
-    convenience init(){
+    public convenience init(){
         self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         self.keyboardType = UIKeyboardType.numberPad
         delegate = self
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.keyboardType = UIKeyboardType.numberPad
         delegate = self

@@ -14,12 +14,12 @@ open class UIBaseTextField: UITextField,UITextFieldDelegate {
     @IBInspectable var charLimit: Int = 0
     
     
-    convenience init(){
+    public convenience init(){
         self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         delegate = self
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
     }
