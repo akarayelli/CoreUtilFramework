@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class UIBaseTextField: UITextField,UITextFieldDelegate {
+open class UIBaseTextField: UITextField,UITextFieldDelegate {
     @IBInspectable var isPerformingAction:Bool=false
     @IBInspectable var charLimit: Int = 0
     
@@ -24,17 +24,17 @@ class UIBaseTextField: UITextField,UITextFieldDelegate {
         delegate = self
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
         delegate = self
     }
     
     
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+    override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         return self.isPerformingAction;
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         //Bypass "Backspace" was pressed
         let char = string.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")

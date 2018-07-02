@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-class UIPaddingTextField:UIBaseTextField{
+open class UIPaddingTextField:UIBaseTextField{
     @IBInspectable var leftPadding:CGFloat=0
     @IBInspectable var rightPadding:CGFloat=0
     @IBInspectable var topPadding:CGFloat=0
@@ -19,17 +19,17 @@ class UIPaddingTextField:UIBaseTextField{
         delegate = self
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
         delegate = self
     }
     
     
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(topPadding, leftPadding, bottomPadding, rightPadding)))
     }
     
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return super.editingRect(forBounds: UIEdgeInsetsInsetRect(bounds,  UIEdgeInsetsMake(topPadding, leftPadding, bottomPadding, rightPadding)))
     }
     
