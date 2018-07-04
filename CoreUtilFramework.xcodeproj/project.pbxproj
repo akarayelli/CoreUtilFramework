@@ -69,6 +69,7 @@
 		AA10FF9C1F78E9E500BC353E /* ApplicationStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10FF9B1F78E9E500BC353E /* ApplicationStateEnum.swift */; };
 		AA929D9F202C673400BBC190 /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA929D9D202C673300BBC190 /* NSManagedObjectContextExtension.swift */; };
 		AA929DA0202C673400BBC190 /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA929D9E202C673300BBC190 /* NSManagedObjectExtension.swift */; };
+		AA9BE40B20ECA5AE000FB0C9 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BE40A20ECA5AE000FB0C9 /* UIFontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		AA10FF9B1F78E9E500BC353E /* ApplicationStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationStateEnum.swift; path = Enum/ApplicationStateEnum.swift; sourceTree = "<group>"; };
 		AA929D9D202C673300BBC190 /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSManagedObjectContextExtension.swift; path = Extensions/NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		AA929D9E202C673300BBC190 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSManagedObjectExtension.swift; path = Extensions/NSManagedObjectExtension.swift; sourceTree = "<group>"; };
+		AA9BE40A20ECA5AE000FB0C9 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIFontExtension.swift; path = Extensions/UIFontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				AA10FF4F1F78E9D600BC353E /* UIViewExtension.swift */,
 				AA10FF4E1F78E9D600BC353E /* URLExtension.swift */,
 				AA10FF4D1F78E9D600BC353E /* UserDefaultsExtension.swift */,
+				AA9BE40A20ECA5AE000FB0C9 /* UIFontExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				AA10FF831F78E9D600BC353E /* UIAlertControllerExtension.swift in Sources */,
 				AA10FF991F78E9D600BC353E /* BoolExtension.swift in Sources */,
 				AA929D9F202C673400BBC190 /* NSManagedObjectContextExtension.swift in Sources */,
+				AA9BE40B20ECA5AE000FB0C9 /* UIFontExtension.swift in Sources */,
 				AA10FF971F78E9D600BC353E /* CGFloatLiteral.swift in Sources */,
 				AA929DA0202C673400BBC190 /* NSManagedObjectExtension.swift in Sources */,
 				AA10FF7B1F78E9D600BC353E /* UIScrollViewExtension.swift in Sources */,

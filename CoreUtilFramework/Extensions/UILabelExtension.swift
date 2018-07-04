@@ -67,6 +67,16 @@ extension UILabel{
         return binarySearch(string: string, minSize: minimumFontSize, maxSize: maxFontSize, size: rectSize, constraintSize: constraintSize)
     }
     
+    
+    /// Will auto resize the contained text to a font size which fits the frames bounds.
+    /// Uses the pre-set font to dynamically determine the proper sizing
+    public func fitTextToBounds() {
+        guard let text = text, let currentFont = font else { return }
+        
+        let bestFittingFont = UIFont.bestFittingFont(for: text, in: bounds, fontDescriptor: currentFont.fontDescriptor)
+        font = bestFittingFont
+    }
+    
 }
 
 // MARK: - Helpers
