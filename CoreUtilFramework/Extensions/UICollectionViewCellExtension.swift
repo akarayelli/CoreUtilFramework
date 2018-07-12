@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 
-extension UICollectionViewCell{
+public extension UICollectionViewCell{
     
-    @IBInspectable var borderColor:UIColor? {
+    @IBInspectable public var borderColor:UIColor? {
         set {
             layer.borderColor = newValue!.cgColor
         }
@@ -25,7 +25,7 @@ extension UICollectionViewCell{
             }
         }
     }
-    @IBInspectable var borderWidth:CGFloat {
+    @IBInspectable public var borderWidth:CGFloat {
         set {
             layer.borderWidth = newValue
         }
@@ -33,7 +33,7 @@ extension UICollectionViewCell{
             return layer.borderWidth
         }
     }
-    @IBInspectable var cornerRadius:CGFloat {
+    @IBInspectable public var cornerRadius:CGFloat {
         set {
             layer.cornerRadius = newValue
             clipsToBounds = newValue > 0
