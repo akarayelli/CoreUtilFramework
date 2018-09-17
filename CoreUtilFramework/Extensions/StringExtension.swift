@@ -212,5 +212,58 @@ extension String {
         
         return String(self[startIndex..<endIndex])
     }
+}
+
+
+public extension String {
+    
+    public func underlinedAttributedString() -> NSMutableAttributedString {
+        
+        
+        let yourAttributes : [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.underlineStyle.rawValue): NSUnderlineStyle.styleSingle.rawValue
+        ]
+        
+        let attributeString = NSMutableAttributedString(string: self,
+                                                        attributes: yourAttributes)
+        
+        return attributeString
+        
+        
+    }
+    
+    public func boldWordsInString(wordsToBold : [String], font: UIFont, boldFont: UIFont ) -> NSAttributedString{
+        
+        let attributedString = NSMutableAttributedString(string: self, attributes:[NSAttributedStringKey.font:font])
+        
+        let boldFontAttribute = [NSAttributedStringKey.font: boldFont]
+        
+        for stringToBold in wordsToBold
+        {
+            attributedString.addAttributes(boldFontAttribute, range: (self as NSString).range(of: stringToBold))
+        }
+        
+        
+        return attributedString
+    }
+}
+
+public extension String{
+    
+    public static func generateRandomValue(length: Int) -> String{
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        
+        let randomString : NSMutableString = NSMutableString(capacity: length)
+        
+        for _ in 1...length{
+            let length = UInt32 (letters.length)
+            let rand = arc4random_uniform(length)
+            randomString.appendFormat("%C", letters.character(at: Int(rand)))
+        }
+        return randomString as String
+    }
     
 }
+
+
