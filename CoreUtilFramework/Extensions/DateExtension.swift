@@ -6,9 +6,14 @@ import Foundation
 
 public extension Date {
     
-    public init?(fromString string: String, format: String) {
+    public init?(fromString string: String, format: String, timezoneIdentifier: String? = nil) {
         let formatter = SDateFormatter.sharedInstance
         formatter.dateFormat = format
+        
+        if let identifier = timezoneIdentifier{
+            formatter.timeZone = TimeZone(identifier: identifier)
+        }
+        
         guard let date = formatter.date(from: string) else {
             return nil
         }
@@ -22,24 +27,51 @@ public extension Date {
         return formatter.string(from: self as Date)
     }
     
-    public func toString(format: String) -> String {
+    public func toString(format: String, timezoneIdentifier: String? = nil) -> String {
         let formatter = SDateFormatter.sharedInstance
         formatter.dateFormat = format
+        
+        if let identifier = timezoneIdentifier{
+            formatter.timeZone = TimeZone(identifier: identifier)
+        }
+        
         return formatter.string(from: self as Date)
     }
     
+    public func toLocalizedString(format: String, localeIdentifier: String? = nil) -> String {
+        
+        let formatter = SDateFormatter.sharedInstance
+        
+        if let identifier = localeIdentifier{
+            formatter.locale = Locale(identifier: identifier)
+        }
+        
+        formatter.setLocalizedDateFormatFromTemplate(format)
+        return formatter.string(from: self as Date)
+    }
     
-    public static func formattedWith(_ date : String, currentFormat : String, formatToConvert : String) -> String{
+
+    public static func formattedWith(_ date : String, currentFormat : String, formatToConvert : String, timezoneIdentifier: String? = nil) -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = currentFormat
+        
+        if let identifier = timezoneIdentifier{
+            formatter.timeZone = TimeZone(identifier: identifier)
+        }
+        
         let dateObject = formatter.date(from: date)
         formatter.dateFormat = formatToConvert
         return formatter.string(from: dateObject!)
     }
     
-    public func formattedWith(_ format : String) -> String{
+    public func formattedWith(_ format : String, timezoneIdentifier: String? = nil ) -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        
+        if let identifier = timezoneIdentifier{
+            formatter.timeZone = TimeZone(identifier: identifier)
+        }
+        
         return formatter.string(from: self)
     }
 }
