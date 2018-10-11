@@ -4,16 +4,15 @@ import Foundation
 public struct ApiError {
     public var error: NSError?
     public var message: String?
-    
-    public var code : Int?
+    public var code : String?
     
     public init (){
     }
     
-    public init(message : String, error : NSError? = nil){
+    public init(message : String, error : NSError? = nil, code: String){
         self.message = message
         self.error = error ?? nil
-        
+        self.code = code
     }
     
     public var description: String {
