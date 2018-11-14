@@ -144,7 +144,8 @@ public extension String {
     }
 
     public var capitalizeFirst: String {
-        let result = replacingCharacters(in: Range(startIndex..<startIndex), with: String(self[startIndex]).capitalized)
+        //let result = replacingCharacters(in: Range(startIndex..<startIndex), with: String(self[startIndex]).capitalized)
+        let result = prefix(1).uppercased() + self.lowercased().dropFirst()
         return result
     }
 
