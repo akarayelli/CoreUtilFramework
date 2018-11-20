@@ -112,14 +112,14 @@ fileprivate extension NSMutableAttributedString {
     }
 
     func setTextColor(value: Any, range: NSRange) {
-        addAttribute(NSAttributedStringKey.foregroundColor, value: value, range: range)
+        addAttribute(NSAttributedString.Key.foregroundColor, value: value, range: range)
     }
 
     func setTextStrike(value: Any = 1, range: NSRange) {
-        addAttribute(NSAttributedStringKey.strikethroughStyle, value: value, range: range)
+        addAttribute(NSAttributedString.Key.strikethroughStyle, value: value, range: range)
     }
 
     func setTextUnderline(value: Any = 1, range: NSRange) {
-        addAttribute(NSAttributedStringKey.underlineStyle, value: value, range: range)
+        addAttribute(NSAttributedString.Key.underlineStyle, value: value, range: range)
     }
 }

@@ -26,11 +26,23 @@ open class UIPaddingTextField:UIBaseTextField{
     
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(topPadding, leftPadding, bottomPadding, rightPadding)))
+        
+        let margin = UIEdgeInsets(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding)
+        let content = bounds.inset(by: margin)
+        return super.textRect(forBounds: content)
+        
+        //Swift 4.0 deprecated
+        //return super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, UIEdgeInsets(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding)))
     }
     
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return super.editingRect(forBounds: UIEdgeInsetsInsetRect(bounds,  UIEdgeInsetsMake(topPadding, leftPadding, bottomPadding, rightPadding)))
+        
+        let margin = UIEdgeInsets(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding)
+        let content = bounds.inset(by: margin)
+        return super.editingRect(forBounds: content)
+        
+        //Swift 4.0 deprecated
+        //return super.editingRect(forBounds: UIEdgeInsetsInsetRect(bounds,  UIEdgeInsets(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding)))
     }
     
     

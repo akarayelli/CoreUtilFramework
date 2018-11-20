@@ -13,7 +13,7 @@ public class BlockSwipeGestureRecognizer: UISwipeGestureRecognizer {
         self.addTarget(self, action: #selector(handleSwipe(swipe:)))
     }
 
-    public  convenience init (numberOfTouchesRequired: Int = 1, direction: UISwipeGestureRecognizerDirection, swipeAction: ((UISwipeGestureRecognizer) -> Void)?) {
+    public  convenience init (numberOfTouchesRequired: Int = 1, direction: UISwipeGestureRecognizer.Direction, swipeAction: ((UISwipeGestureRecognizer) -> Void)?) {
         self.init()
         self.numberOfTouchesRequired = numberOfTouchesRequired
         self.direction = direction

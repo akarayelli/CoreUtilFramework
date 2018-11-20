@@ -50,8 +50,8 @@ public extension Timer {
         return timer
     }
 
-    public func start(runLoop: RunLoop = RunLoop.current, modes: RunLoopMode...) {
-        let modes = modes.isEmpty ? [RunLoopMode.defaultRunLoopMode] : modes
+    public func start(runLoop: RunLoop = RunLoop.current, modes: RunLoop.Mode...) {
+        let modes = modes.isEmpty ? [RunLoop.Mode.default] : modes
         modes.forEach {
             runLoop.add(self, forMode: $0)
         }

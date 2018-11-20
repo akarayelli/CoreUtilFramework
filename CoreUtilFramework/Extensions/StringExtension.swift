@@ -221,8 +221,8 @@ public extension String {
     public func underlinedAttributedString() -> NSMutableAttributedString {
         
         
-        let yourAttributes : [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.underlineStyle.rawValue): NSUnderlineStyle.styleSingle.rawValue
+        let yourAttributes : [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.underlineStyle.rawValue): NSUnderlineStyle.single.rawValue
         ]
         
         let attributeString = NSMutableAttributedString(string: self,
@@ -235,9 +235,9 @@ public extension String {
     
     public func boldWordsInString(wordsToBold : [String], font: UIFont, boldFont: UIFont ) -> NSAttributedString{
         
-        let attributedString = NSMutableAttributedString(string: self, attributes:[NSAttributedStringKey.font:font])
+        let attributedString = NSMutableAttributedString(string: self, attributes:[NSAttributedString.Key.font:font])
         
-        let boldFontAttribute = [NSAttributedStringKey.font: boldFont]
+        let boldFontAttribute = [NSAttributedString.Key.font: boldFont]
         
         for stringToBold in wordsToBold
         {
