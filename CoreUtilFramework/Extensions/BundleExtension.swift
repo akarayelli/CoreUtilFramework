@@ -33,6 +33,10 @@ public extension Bundle {
     public var secureCertificateName: String {
         return string(for: "SSLCertificateName")
     }
+    
+    public var verifySSLCertificate: Bool{
+        return bool(for: "VerifySSLCertificate")
+    }
 
     public var adMobAppId: String {
         return string(for: "AdMod_APP_ID")
@@ -63,6 +67,14 @@ fileprivate extension Bundle {
         guard let infoDictionary = Bundle.main.infoDictionary,
             let value = infoDictionary[key] as? String else {
                 return ""
+        }
+        return value
+    }
+    
+    func bool(for key: String) -> Bool {
+        guard let infoDictionary = Bundle.main.infoDictionary,
+            let value = infoDictionary[key] as? Bool else {
+                return false
         }
         return value
     }
