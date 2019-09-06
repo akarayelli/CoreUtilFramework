@@ -74,7 +74,7 @@ fileprivate extension Bundle {
     func bool(for key: String) -> Bool {
         guard let infoDictionary = Bundle.main.infoDictionary,
             let value = infoDictionary[key] as? Bool else {
-                return false
+                return true
         }
         return value
     }
