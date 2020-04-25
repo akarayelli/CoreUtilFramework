@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension UIFont {
+public extension UIFont {
     
     /**
      Will return the best font conforming to the descriptor which will fit in the provided bounds.
@@ -36,5 +36,46 @@ extension UIFont {
     static func bestFittingFont(for text: String, in bounds: CGRect, fontDescriptor: UIFontDescriptor) -> UIFont {
         let bestSize = bestFittingFontSize(for: text, in: bounds, fontDescriptor: fontDescriptor)
         return UIFont(descriptor: fontDescriptor, size: bestSize)
+    }
+}
+
+
+public extension UIFont {
+
+    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
+        return NSString(string: string).boundingRect(
+            with: CGSize(width: width, height: .greatestFiniteMagnitude),
+            options: .usesLineFragmentOrigin,
+            attributes: [.font: self],
+            context: nil).size
+    }
+
+}
+
+
+public extension UIFont {
+
+    func withTraits(_ traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+
+        // create a new font descriptor with the given traits
+        guard let fd = fontDescriptor.withSymbolicTraits(traits) else {
+            // the given traits couldn't be applied, return self
+            return self
+        }
+
+        // return a new font with the created font descriptor
+        return UIFont(descriptor: fd, size: pointSize)
+    }
+
+    func italics() -> UIFont {
+        return withTraits(.traitItalic)
+    }
+
+    func bold() -> UIFont {
+        return withTraits(.traitBold)
+    }
+
+    func boldItalics() -> UIFont {
+        return withTraits([ .traitBold, .traitItalic ])
     }
 }

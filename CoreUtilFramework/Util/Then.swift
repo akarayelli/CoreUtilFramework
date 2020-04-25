@@ -2,7 +2,7 @@ import Foundation
 
 public protocol Then {}
 
-extension Then {
+public extension Then {
 
     /// Makes it available to set properties with closures.
     ///

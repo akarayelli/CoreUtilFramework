@@ -1,14 +1,8 @@
-//
-//  UIScrollViewExtension.swift
-//  TTPrime
-//
-//  Created on 12/03/2017.
-//  Copyright © 2017 Ratel Bilişim Hizmetleri. All rights reserved.
-//
+
 
 import UIKit
 
-extension UIWebView{
+public extension UIWebView{
 
     @IBInspectable var fitContent:Bool{
         set {

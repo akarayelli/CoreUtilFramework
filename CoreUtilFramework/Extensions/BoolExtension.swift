@@ -1,7 +1,7 @@
 
 import Foundation
 
-extension Bool {
+public extension Bool {
     mutating func toggle() -> Bool {
         self = !self
         return self

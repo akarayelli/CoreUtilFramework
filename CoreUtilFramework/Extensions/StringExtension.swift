@@ -179,6 +179,28 @@ public extension String {
         return true
     }
     
+    func isValidCitizenshipID() -> Bool!{
+        
+        let digits = self.description.map { Int(String($0)) ?? 0 }
+            
+        if digits.count == 11
+        {
+            if (digits.first != 0)
+            {
+                let first   = (digits[0] + digits[2] + digits[4] + digits[6] + digits[8]) * 7
+                let second  = (digits[1] + digits[3] + digits[5] + digits[7])
+                    
+                let digit10 = (first - second) % 10
+                let digit11 = (digits[0] + digits[1] + digits[2] + digits[3] + digits[4] + digits[5] + digits[6] + digits[7] + digits[8] + digits[9]) % 10
+                    
+                if (digits[10] == digit11) && (digits[9] == digit10)
+                {
+                    return true
+                }
+            }
+        }
+        return false
+    }
     
     func isEmpty() -> Bool!{
         if ( self == ""){
@@ -268,3 +290,49 @@ public extension String{
 }
 
 
+public extension String{
+    
+    var decimalAmount: Decimal?{
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "tr")
+        formatter.generatesDecimalNumbers = true
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.numberStyle = NumberFormatter.Style.decimal
+        return formatter.number(from: self)?.decimalValue
+    }
+}
+
+
+public extension String {
+    
+    enum RegularExpressions: String {
+        case phone = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$"
+    }
+    
+    func isValid(regex: RegularExpressions) -> Bool {
+        return isValid(regex: regex.rawValue)
+    }
+    
+    func isValid(regex: String) -> Bool {
+        let matches = range(of: regex, options: .regularExpression)
+        return matches != nil
+    }
+    
+    func onlyDigits() -> String {
+        let filtredUnicodeScalars = unicodeScalars.filter{CharacterSet.decimalDigits.contains($0)}
+        return String(String.UnicodeScalarView(filtredUnicodeScalars))
+    }
+    
+    func call() {
+        if isValid(regex: .phone) {
+            if let url = URL(string: "telprompt://\(self.onlyDigits())"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
+}

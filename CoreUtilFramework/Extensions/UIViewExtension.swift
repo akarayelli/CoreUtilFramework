@@ -6,13 +6,13 @@ import UIKit
 // MARK - Localizables
 
 public extension UIView {
-
+    
     // swiftlint:disable:next cyclomatic_complexity
     func convertLocalizables() {
         if subviews.count == 0 {
             return
         }
-
+        
         for aSubview: UIView in subviews {
             if let aLabel = aSubview as? UILabel {
                 if let text = aLabel.text {
@@ -38,18 +38,18 @@ public extension UIView {
             }
         }
     }
-
+    
 }
 
 // MARK: - Nib
 
 public extension UIView {
-
+    
     class func fromNib<T: UIView>(nibNameOrNil: String? = nil) -> T {
         let v: T? = fromNib(nibNameOrNil: nibNameOrNil)
         return v!
     }
-
+    
     class func fromNib<T: UIView>(nibNameOrNil: String? = nil) -> T? {
         var view: T?
         let name: String
@@ -58,11 +58,11 @@ public extension UIView {
         } else {
             name = T.className
         }
-
+        
         guard let nibViews = Bundle.main.loadNibNamed(name, owner: nil, options: nil) else {
             return nil
         }
-
+        
         for v in nibViews {
             if let tog = v as? T {
                 view = tog
@@ -73,7 +73,7 @@ public extension UIView {
 }
 
 
-extension UIView {
+public extension UIView {
     func getAllSubviewsRecursively() -> [AnyObject] {
         var allSubviews: [AnyObject] = []
         
@@ -86,7 +86,7 @@ extension UIView {
     }
 }
 
-extension UIView {
+public extension UIView {
     
     var width: CGFloat {
         return self.frame.size.width
@@ -109,7 +109,7 @@ extension UIView {
     }
 }
 
-extension UIView{
+public extension UIView{
     
     func shake(duration: CFTimeInterval) {
         
@@ -132,3 +132,40 @@ extension UIView{
 }
 
 
+public extension UIView {
+    func createDottedLine(width: CGFloat, color: CGColor) {
+        let caShapeLayer = CAShapeLayer()
+        caShapeLayer.strokeColor = color
+        caShapeLayer.lineWidth = width
+        caShapeLayer.lineDashPattern = [2,3]
+        let cgPath = CGMutablePath()
+        let cgPoint = [CGPoint(x: 0, y: 0), CGPoint(x: self.frame.width, y: 0)]
+        cgPath.addLines(between: cgPoint)
+        caShapeLayer.path = cgPath
+        layer.addSublayer(caShapeLayer)
+    }
+    
+    func addShadow(radius: CGFloat = 5, offset: CGSize = CGSize(width: 0, height: 3), opacity: Float = 0.5){
+        layer.masksToBounds = false
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+    }
+    
+    func removeShadow(){
+        layer.masksToBounds = true
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = 0
+        layer.shadowOpacity = 0
+    }
+    
+    func roundCorners(_ corners: CACornerMask, radius: CGFloat) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        if #available(iOS 11.0, *) {
+            self.layer.maskedCorners = corners
+        } else {
+            self.layer.cornerRadius = radius
+        }
+    }
+}

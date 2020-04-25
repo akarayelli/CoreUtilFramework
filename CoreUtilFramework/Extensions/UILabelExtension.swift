@@ -1,15 +1,9 @@
-//
-//  UILabelExtension.swift
-//  TTPrime
-//
-//  Created on 11/02/2017.
-//  Copyright © 2017 Ratel Bilişim Hizmetleri. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
 
-extension UILabel{
+public extension UILabel{
 
     @IBInspectable var adjustable:Bool {
         set {

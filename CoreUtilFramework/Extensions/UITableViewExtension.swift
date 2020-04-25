@@ -1,7 +1,7 @@
 import UIKit
 
-extension UITableView {
-    override open var delaysContentTouches: Bool {
+public extension UITableView {
+    override var delaysContentTouches: Bool {
         didSet {
             for view in subviews {
                 if let scroll = view as? UIScrollView {
