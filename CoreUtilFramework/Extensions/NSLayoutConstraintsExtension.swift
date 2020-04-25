@@ -6,7 +6,7 @@ import UIKit
 #if !os(watchOS)
 public extension NSLayoutConstraint {
 
-    public func apply(multiplier: CGFloat, toView: SwiftyView) {
+    func apply(multiplier: CGFloat, toView: SwiftyView) {
         switch firstAttribute {
         case .width:
             constant = toView.bounds.width * multiplier

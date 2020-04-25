@@ -6,7 +6,7 @@ import Foundation
 
 public extension UserDefaults {
 
-    public subscript(key: String) -> Any? {
+    subscript(key: String) -> Any? {
         get {
             return object(forKey: key)
         }
@@ -21,15 +21,15 @@ public extension UserDefaults {
 
 public extension UserDefaults {
 
-    public static func contains(key: String) -> Bool {
+    static func contains(key: String) -> Bool {
         return self.standard.contains(key: key)
     }
 
-    public func contains(key: String) -> Bool {
+    func contains(key: String) -> Bool {
         return self.dictionaryRepresentation().keys.contains(key)
     }
 
-    public func reset() {
+    func reset() {
         for key in Array(UserDefaults.standard.dictionaryRepresentation().keys) {
             UserDefaults.standard.removeObject(forKey: key)
         }

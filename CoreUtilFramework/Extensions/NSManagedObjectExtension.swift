@@ -12,17 +12,17 @@ import CoreData
 
 public extension NSManagedObject {
     
-    public class var entityName : String {
+    class var entityName : String {
         let components = NSStringFromClass(self).components(separatedBy: ".")
         return components[1]
     }
     
     
-    public class func fetchCoreDataRequest() -> NSFetchRequest<NSManagedObject> {
+    class func fetchCoreDataRequest() -> NSFetchRequest<NSManagedObject> {
         return NSFetchRequest<NSManagedObject>(entityName:self.entityName)
     }
     
-    public class func fetchRequestWithKey(_ key: String, ascending: Bool = true) -> NSFetchRequest<NSManagedObject> {
+    class func fetchRequestWithKey(_ key: String, ascending: Bool = true) -> NSFetchRequest<NSManagedObject> {
         let request = fetchCoreDataRequest()
         request.sortDescriptors = [NSSortDescriptor(key: key, ascending: ascending)]
         return request

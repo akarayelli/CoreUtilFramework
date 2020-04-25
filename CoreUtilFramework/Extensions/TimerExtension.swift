@@ -6,19 +6,19 @@ import Foundation
 
 public extension Timer {
 
-    public class func after(_ interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
+    class func after(_ interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
         let timer = Timer.new(after: interval, block)
         timer.start()
         return timer
     }
 
-    public class func every(_ interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
+    class func every(_ interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
         let timer = Timer.new(every: interval, block)
         timer.start()
         return timer
     }
 
-    @nonobjc public class func every(_ interval: TimeInterval, _ block: @escaping (Timer) -> Void) -> Timer {
+    @nonobjc class func every(_ interval: TimeInterval, _ block: @escaping (Timer) -> Void) -> Timer {
         let timer = Timer.new(every: interval, block)
         timer.start()
         return timer
@@ -30,19 +30,19 @@ public extension Timer {
 
 public extension Timer {
 
-    public class func new(after interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
+    class func new(after interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
         return CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent() + interval, 0, 0, 0) { _ in
             block()
         }
     }
 
-    public class func new(every interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
+    class func new(every interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
         return CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent() + interval, interval, 0, 0) { _ in
             block()
         }
     }
 
-    @nonobjc public class func new(every interval: TimeInterval, _ block: @escaping (Timer) -> Void) -> Timer {
+    @nonobjc class func new(every interval: TimeInterval, _ block: @escaping (Timer) -> Void) -> Timer {
         var timer: Timer!
         timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent() + interval, interval, 0, 0) { _ in
             block(timer)
@@ -50,7 +50,7 @@ public extension Timer {
         return timer
     }
 
-    public func start(runLoop: RunLoop = RunLoop.current, modes: RunLoop.Mode...) {
+    func start(runLoop: RunLoop = RunLoop.current, modes: RunLoop.Mode...) {
         let modes = modes.isEmpty ? [RunLoop.Mode.default] : modes
         modes.forEach {
             runLoop.add(self, forMode: $0)

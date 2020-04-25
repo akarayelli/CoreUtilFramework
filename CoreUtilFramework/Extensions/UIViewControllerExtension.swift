@@ -5,11 +5,11 @@ import UIKit
 
 public extension UIViewController {
 
-    public func getIdentifierName() -> String{
+    func getIdentifierName() -> String{
         return String(describing: type(of: self))
     }
     
-    public func deletePreviousViewControllers(animated: Bool = false) {
+    func deletePreviousViewControllers(animated: Bool = false) {
         navigationController?.setViewControllers([self], animated: animated)
     }
 
@@ -19,7 +19,7 @@ public extension UIViewController {
 
 public extension UIViewController {
 
-    public func setupBackButton(hidden: Bool = false, title: String = "", backIndicatorImage: UIImage? = nil, tintColor: UIColor? = UIColor.white) {
+    func setupBackButton(hidden: Bool = false, title: String = "", backIndicatorImage: UIImage? = nil, tintColor: UIColor? = UIColor.white) {
         navigationItem.hidesBackButton = hidden
         if !hidden {
             navigationItem.backBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
@@ -36,12 +36,12 @@ public extension UIViewController {
         }
     }
 
-    public func setupBar(leftView: UIView) {
+    func setupBar(leftView: UIView) {
         let leftBarButtonItem = UIBarButtonItem(customView: leftView)
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
 
-    public func setupBar(rightView: UIView) {
+    func setupBar(rightView: UIView) {
         let rightBarButtonItem = UIBarButtonItem(customView: rightView)
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }

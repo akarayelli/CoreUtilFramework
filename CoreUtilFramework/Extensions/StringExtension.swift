@@ -14,11 +14,11 @@ public extension String {
 
 public extension String {
 
-    public subscript(integerIndex: Int) -> Character {
+    subscript(integerIndex: Int) -> Character {
         return self[index(startIndex, offsetBy: integerIndex)]
     }
 
-    public subscript(integerRange: Range<Int>) -> String {
+    subscript(integerRange: Range<Int>) -> String {
         let start = index(startIndex, offsetBy: integerRange.lowerBound)
         let end = index(startIndex, offsetBy: integerRange.upperBound)
         return String(self[start..<end])
@@ -56,15 +56,15 @@ public extension String {
 
 public extension String {
 
-    public static func className(_ aClass: AnyClass) -> String {
+    static func className(_ aClass: AnyClass) -> String {
         return NSStringFromClass(aClass).components(separatedBy: ".").last!
     }
     
-    public var length: Int {
+    var length: Int {
         return self.count
     }
 
-    public func isOnlyEmptySpacesAndNewLineCharacters() -> Bool {
+    func isOnlyEmptySpacesAndNewLineCharacters() -> Bool {
         let characterSet = NSCharacterSet.whitespacesAndNewlines
         let newText = self.trimmingCharacters(in: characterSet)
         return newText.isEmpty
@@ -74,11 +74,11 @@ public extension String {
         return self.range(of: text) != nil
     }
 
-    public func contains(text: String, compareOption: NSString.CompareOptions) -> Bool {
+    func contains(text: String, compareOption: NSString.CompareOptions) -> Bool {
         return self.range(of: text, options: compareOption) != nil
     }
 
-    public func containsEmoji() -> Bool {
+    func containsEmoji() -> Bool {
         for i in 0...length {
             let c: unichar = (self as NSString).character(at: i)
             if (0xD800 <= c && c <= 0xDBFF) || (0xDC00 <= c && c <= 0xDFFF) {
@@ -94,7 +94,7 @@ public extension String {
 
 public extension String {
 
-    public var extractURLs: [URL] {
+    var extractURLs: [URL] {
         var urls: [URL] = []
         let detector: NSDataDetector?
         do {
@@ -122,19 +122,19 @@ public extension String {
 
 public extension String {
 
-    public mutating func trim() {
+    mutating func trim() {
         self = trimmed()
     }
 
-    public func trimmed() -> String {
+    func trimmed() -> String {
         return components(separatedBy: NSCharacterSet.whitespacesAndNewlines).joined(separator: "")
     }
 
-    public mutating func truncate(limit: Int) {
+    mutating func truncate(limit: Int) {
         self = truncated(limit: limit)
     }
 
-    public func truncated(limit: Int) -> String {
+    func truncated(limit: Int) -> String {
         if self.length > limit {
             var truncatedString = self[0..<limit]
             truncatedString = truncatedString.appending("...")
@@ -143,7 +143,7 @@ public extension String {
         return self
     }
 
-    public var capitalizeFirst: String {
+    var capitalizeFirst: String {
         //let result = replacingCharacters(in: Range(startIndex..<startIndex), with: String(self[startIndex]).capitalized)
         let result = prefix(1).uppercased() + self.lowercased().dropFirst()
         return result
@@ -155,23 +155,23 @@ public extension String {
 
 public extension String {
 
-    public func isNumber() -> Bool {
+    func isNumber() -> Bool {
         if let _ = SNumberFormatter.sharedInstance.number(from: self) {
             return true
         }
         return false
     }
 
-    public var isEmail: Bool {
+    var isEmail: Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: self)
     }
 
-    public var isAlphanumeric: Bool {
+    var isAlphanumeric: Bool {
         return !isEmpty && (isAlphabetic(containsTurkishChars: true) || isNumber())
     }
     
-    public func isAlphabetic(containsTurkishChars: Bool) -> Bool
+    func isAlphabetic(containsTurkishChars: Bool) -> Bool
     {
         if self.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) != nil {
             return false
@@ -180,7 +180,7 @@ public extension String {
     }
     
     
-    public func isEmpty() -> Bool!{
+    func isEmpty() -> Bool!{
         if ( self == ""){
             return true
         }
@@ -190,7 +190,7 @@ public extension String {
 }
 
 extension String {
-    public var words: [String] {
+    var words: [String] {
         var words: [String] = []
         enumerateSubstrings(in: startIndex..<endIndex, options: .byWords) { word,_,_,_ in
             guard let word = word else { return }
@@ -199,7 +199,7 @@ extension String {
         return words
     }
     
-    public func substring(start: Int, end: Int) -> String
+    func substring(start: Int, end: Int) -> String
     {
         if (start < 0 || start > self.count) {
             return ""
@@ -218,7 +218,7 @@ extension String {
 
 public extension String {
     
-    public func underlinedAttributedString() -> NSMutableAttributedString {
+    func underlinedAttributedString() -> NSMutableAttributedString {
         
         
         let yourAttributes : [NSAttributedString.Key: Any] = [
@@ -233,7 +233,7 @@ public extension String {
         
     }
     
-    public func boldWordsInString(wordsToBold : [String], font: UIFont, boldFont: UIFont ) -> NSAttributedString{
+    func boldWordsInString(wordsToBold : [String], font: UIFont, boldFont: UIFont ) -> NSAttributedString{
         
         let attributedString = NSMutableAttributedString(string: self, attributes:[NSAttributedString.Key.font:font])
         
@@ -251,7 +251,7 @@ public extension String {
 
 public extension String{
     
-    public static func generateRandomValue(length: Int) -> String{
+    static func generateRandomValue(length: Int) -> String{
         
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         

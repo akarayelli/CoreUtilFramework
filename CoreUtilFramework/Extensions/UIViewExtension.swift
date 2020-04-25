@@ -8,7 +8,7 @@ import UIKit
 public extension UIView {
 
     // swiftlint:disable:next cyclomatic_complexity
-    public func convertLocalizables() {
+    func convertLocalizables() {
         if subviews.count == 0 {
             return
         }
@@ -45,12 +45,12 @@ public extension UIView {
 
 public extension UIView {
 
-    public class func fromNib<T: UIView>(nibNameOrNil: String? = nil) -> T {
+    class func fromNib<T: UIView>(nibNameOrNil: String? = nil) -> T {
         let v: T? = fromNib(nibNameOrNil: nibNameOrNil)
         return v!
     }
 
-    public class func fromNib<T: UIView>(nibNameOrNil: String? = nil) -> T? {
+    class func fromNib<T: UIView>(nibNameOrNil: String? = nil) -> T? {
         var view: T?
         let name: String
         if let nibName = nibNameOrNil {
@@ -74,7 +74,7 @@ public extension UIView {
 
 
 extension UIView {
-    public func getAllSubviewsRecursively() -> [AnyObject] {
+    func getAllSubviewsRecursively() -> [AnyObject] {
         var allSubviews: [AnyObject] = []
         
         for subview in self.subviews {
@@ -88,30 +88,30 @@ extension UIView {
 
 extension UIView {
     
-    public var width: CGFloat {
+    var width: CGFloat {
         return self.frame.size.width
     }
     
-    public var height: CGFloat {
+    var height: CGFloat {
         return self.frame.size.height
     }
     
-    public var xPos: CGFloat {
+    var xPos: CGFloat {
         return self.frame.origin.x
     }
     
-    public var yPos: CGFloat {
+    var yPos: CGFloat {
         return self.frame.origin.y
     }
     
-    public var yBottom: CGFloat {
+    var yBottom: CGFloat {
         return self.frame.origin.y + self.frame.size.height
     }
 }
 
 extension UIView{
     
-    public func shake(duration: CFTimeInterval) {
+    func shake(duration: CFTimeInterval) {
         
         let animation = CAKeyframeAnimation(keyPath: "transform.translation")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
@@ -121,7 +121,7 @@ extension UIView{
         
     }
     
-    public func textDropShadow(radius: CGFloat = 2.0, opacity: Float = 0.2, offsetWidth: Int = 1, offsetHeight: Int = 2) {
+    func textDropShadow(radius: CGFloat = 2.0, opacity: Float = 0.2, offsetWidth: Int = 1, offsetHeight: Int = 2) {
         self.layer.masksToBounds = false
         self.layer.shadowRadius = radius
         self.layer.shadowOpacity = opacity

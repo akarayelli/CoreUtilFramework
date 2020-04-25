@@ -11,26 +11,26 @@ import Foundation
 
 public extension NSMutableAttributedString {
 
-    public static func setTextColor(text: String, color: SwiftyColor, afterOcurrence occurence: String) -> NSMutableAttributedString {
+    static func setTextColor(text: String, color: SwiftyColor, afterOcurrence occurence: String) -> NSMutableAttributedString {
         let attrStr = NSMutableAttributedString(string: text)
         attrStr.setTextColor(color: color, afterOcurrence: occurence)
         return attrStr
     }
 
-    public static func setTextColor(text: String, color: SwiftyColor, forOccurences searchString: String) -> NSMutableAttributedString {
+    static func setTextColor(text: String, color: SwiftyColor, forOccurences searchString: String) -> NSMutableAttributedString {
         let attrStr = NSMutableAttributedString(string: text)
         attrStr.setTextColor(color: color, forOccurences: searchString)
         return attrStr
     }
 
-    public func setTextColor(color: SwiftyColor, afterOcurrence occurence: String) {
+    func setTextColor(color: SwiftyColor, afterOcurrence occurence: String) {
         let range = NSRange(text: string, afterOccurence: occurence)
         if range.location != NSNotFound {
             setTextColor(value: color, range: range)
         }
     }
 
-    public func setTextColor(color: SwiftyColor, forOccurences searchString: String) {
+    func setTextColor(color: SwiftyColor, forOccurences searchString: String) {
         addAttributeForOccurence(searchString: searchString, value: color, funcAddingAttribute: setTextColor)
     }
 
@@ -40,26 +40,26 @@ public extension NSMutableAttributedString {
 
 public extension NSMutableAttributedString {
 
-    public static func setTextStrike(text: String, afterOcurrence occurence: String) -> NSMutableAttributedString {
+    static func setTextStrike(text: String, afterOcurrence occurence: String) -> NSMutableAttributedString {
         let attrStr = NSMutableAttributedString(string: text)
         attrStr.setTextStrike(afterOcurrence: occurence)
         return attrStr
     }
 
-    public static func setTextStrike(text: String, forOccurences searchString: String) -> NSMutableAttributedString {
+    static func setTextStrike(text: String, forOccurences searchString: String) -> NSMutableAttributedString {
         let attrStr = NSMutableAttributedString(string: text)
         attrStr.setTextStrike(forOccurences: searchString)
         return attrStr
     }
 
-    public func setTextStrike(afterOcurrence occurence: String) {
+    func setTextStrike(afterOcurrence occurence: String) {
         let range = NSRange(text: string, afterOccurence: occurence)
         if range.location != NSNotFound {
             setTextStrike(range: range)
         }
     }
 
-    public func setTextStrike(forOccurences searchString: String) {
+    func setTextStrike(forOccurences searchString: String) {
         addAttributeForOccurence(searchString: searchString, funcAddingAttribute: setTextStrike)
     }
 
@@ -69,26 +69,26 @@ public extension NSMutableAttributedString {
 
 public extension NSMutableAttributedString {
 
-    public static func setTextUnderline(text: String, afterOcurrence occurence: String) -> NSMutableAttributedString {
+    static func setTextUnderline(text: String, afterOcurrence occurence: String) -> NSMutableAttributedString {
         let attrStr = NSMutableAttributedString(string: text)
         attrStr.setTextUnderline(afterOcurrence: occurence)
         return attrStr
     }
 
-    public static func setTextUnderline(text: String, forOccurences searchString: String) -> NSMutableAttributedString {
+    static func setTextUnderline(text: String, forOccurences searchString: String) -> NSMutableAttributedString {
         let attrStr = NSMutableAttributedString(string: text)
         attrStr.setTextUnderline(forOccurences: searchString)
         return attrStr
     }
 
-    public func setTextUnderline(afterOcurrence occurence: String) {
+    func setTextUnderline(afterOcurrence occurence: String) {
         let range = NSRange(text: string, afterOccurence: occurence)
         if range.location != NSNotFound {
             setTextUnderline(range: range)
         }
     }
 
-    public func setTextUnderline(forOccurences searchString: String) {
+    func setTextUnderline(forOccurences searchString: String) {
         addAttributeForOccurence(searchString: searchString, funcAddingAttribute: setTextUnderline)
     }
 

@@ -4,27 +4,27 @@ import UIKit
 
 public extension UIScreen {
 
-    public static func screenOrientation() -> UIInterfaceOrientation {
+    static func screenOrientation() -> UIInterfaceOrientation {
         return UIApplication.shared.statusBarOrientation
     }
 
-    public static func screenSize() -> CGSize {
+    static func screenSize() -> CGSize {
         return CGSize(width: screenWidth, height: screenHeight)
     }
 
-    public static var screenWidth: CGFloat {
+    static var screenWidth: CGFloat {
         return UIScreen.main.bounds.size.width
     }
 
-    public static var screenHeight: CGFloat {
+    static var screenHeight: CGFloat {
         return UIScreen.main.bounds.size.height
     }
 
-    public static var screenStatusBarHeight: CGFloat {
+    static var screenStatusBarHeight: CGFloat {
         return UIApplication.shared.statusBarFrame.height
     }
 
-    public static var screenHeightWithoutStatusBar: CGFloat {
+    static var screenHeightWithoutStatusBar: CGFloat {
         
         
         return screenOrientation().isPortrait ? UIScreen.main.bounds.size.height - screenStatusBarHeight :

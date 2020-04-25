@@ -7,7 +7,7 @@ import UIKit
 
 public extension UIImage {
 
-    public convenience init(color: UIColor?) {
+    convenience init(color: UIColor?) {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
         color?.setFill()
@@ -17,7 +17,7 @@ public extension UIImage {
         self.init(cgImage: (image?.cgImage!)!)
     }
 
-    public func filled(with color: UIColor?) -> UIImage {
+    func filled(with color: UIColor?) -> UIImage {
         guard let color = color else {
             return self
         }
@@ -43,7 +43,7 @@ public extension UIImage {
         return newImage
     }
     
-    public func areaAverage() -> UIColor {
+    func areaAverage() -> UIColor {
         
         var bitmap = [UInt8](repeating: 0, count: 4)
         
@@ -72,11 +72,11 @@ public extension UIImage {
 
 public extension UIImage {
 
-    public var original: UIImage {
+    var original: UIImage {
         return withRenderingMode(.alwaysOriginal)
     }
 
-    public var template: UIImage {
+    var template: UIImage {
         return withRenderingMode(.alwaysTemplate)
     }
 

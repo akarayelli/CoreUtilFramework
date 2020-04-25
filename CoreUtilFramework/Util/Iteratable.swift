@@ -4,7 +4,7 @@ import Foundation
 public protocol Iteratable {}
 public extension Iteratable where Self: RawRepresentable & Hashable {}
 
-public func iterateEnum<T: Hashable>(_ from: T.Type) -> AnyIterator<T> {
+func iterateEnum<T: Hashable>(_ from: T.Type) -> AnyIterator<T> {
     var x = 0
     return AnyIterator {
         let next = withUnsafePointer(to: &x) {

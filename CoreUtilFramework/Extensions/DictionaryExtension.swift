@@ -6,12 +6,12 @@ import Foundation
 
 public extension Dictionary {
 
-    public func random() -> Value {
+    func random() -> Value {
         let index: Int = Int(arc4random_uniform(UInt32(self.count)))
         return Array(self.values)[index]
     }
     
-    public func toJSONData() -> Data? {
+    func toJSONData() -> Data? {
         do {
             return try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions.prettyPrinted)
         } catch {
@@ -25,7 +25,7 @@ public extension Dictionary {
 
 public extension Dictionary {
 
-    public func union(values: Dictionary...) -> Dictionary {
+    func union(values: Dictionary...) -> Dictionary {
         var result = self
         values.forEach { dictionary in
             dictionary.forEach { key, value in
@@ -35,7 +35,7 @@ public extension Dictionary {
         return result
     }
 
-    public mutating func merge<K, V>(with dictionaries: Dictionary<K, V>...) {
+    mutating func merge<K, V>(with dictionaries: Dictionary<K, V>...) {
         for dict in dictionaries {
             for (key, value) in dict {
                 guard let value = value as? Value, let key = key as? Key else {
@@ -52,11 +52,11 @@ public extension Dictionary {
 
 public extension Dictionary {
 
-    public func has(key: Key) -> Bool {
+    func has(key: Key) -> Bool {
         return index(forKey: key) != nil
     }
 
-    public func testAll(test: (Key, Value) -> (Bool)) -> Bool {
+    func testAll(test: (Key, Value) -> (Bool)) -> Bool {
         for (key, value) in self {
             if !test(key, value) {
                 return false
@@ -68,7 +68,7 @@ public extension Dictionary {
 
 public extension Dictionary where Value: Equatable {
 
-    public func difference(with dictionaries: [Key: Value]...) -> [Key: Value] {
+    func difference(with dictionaries: [Key: Value]...) -> [Key: Value] {
         var result = self
         for dictionary in dictionaries {
             for (key, value) in dictionary {
@@ -81,17 +81,17 @@ public extension Dictionary where Value: Equatable {
     }
 }
 
-public func += <KeyType, ValueType> (left: inout Dictionary<KeyType, ValueType>,
+func += <KeyType, ValueType> (left: inout Dictionary<KeyType, ValueType>,
                                      right: Dictionary<KeyType, ValueType>) {
     for (k, v) in right {
         left.updateValue(v, forKey: k)
     }
 }
 
-public func - <K, V: Equatable> (first: [K: V], second: [K: V]) -> [K: V] {
+func - <K, V: Equatable> (first: [K: V], second: [K: V]) -> [K: V] {
     return first.difference(with: second)
 }
 
-public func | <K: Hashable, V> (first: [K: V], second: [K: V]) -> [K: V] {
+func | <K: Hashable, V> (first: [K: V], second: [K: V]) -> [K: V] {
     return first.union(values: second)
 }

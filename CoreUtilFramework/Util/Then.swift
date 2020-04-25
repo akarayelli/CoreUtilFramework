@@ -11,7 +11,7 @@ extension Then {
     ///         $0.textColor = UIColor.blackColor()
     ///         $0.text = "Hello, World!"
     ///     }
-    public func then(block: (inout (Self)) -> Void) -> Self {
+    func then(block: (inout (Self)) -> Void) -> Self {
         var copy = self
         block(&copy)
         return copy

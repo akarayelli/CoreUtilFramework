@@ -7,7 +7,7 @@ private var errorKey: UInt8 = 0
 
 extension NSError {
     
-    public var logicalErrorDescription:String!{
+    var logicalErrorDescription:String!{
         get {
             if let message = (objc_getAssociatedObject(self, &errorKey) as? String){
                 return message

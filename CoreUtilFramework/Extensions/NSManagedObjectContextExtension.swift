@@ -13,12 +13,12 @@ import CoreData
 public extension NSManagedObjectContext {
     
  
-   public func insert<T : NSManagedObject>(_ entity: T.Type) -> T {
+   func insert<T : NSManagedObject>(_ entity: T.Type) -> T {
         let entityName = entity.entityName
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into:self) as! T
     }
     
-    public func fetchAll<T : NSManagedObject>(_ entity: T.Type, key:String? = nil, ascending:Bool = true) -> [T] {
+    func fetchAll<T : NSManagedObject>(_ entity: T.Type, key:String? = nil, ascending:Bool = true) -> [T] {
         let fetchRequest : NSFetchRequest<T> = {
             if let key = key {
                 return entity.fetchRequestWithKey(key, ascending: ascending) as! NSFetchRequest<T>

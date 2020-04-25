@@ -12,12 +12,12 @@ extension UITableView {
         }
     }
 
-    public func setSeparatorInsets(_ insets: UIEdgeInsets) {
+    func setSeparatorInsets(_ insets: UIEdgeInsets) {
         separatorInset = insets
         layoutMargins = insets
     }
 
-    public func scrollsToBottom(_ animated: Bool) {
+    func scrollsToBottom(_ animated: Bool) {
         let section = numberOfSections - 1
         let row = numberOfRows(inSection: section) - 1
         if section < 0 || row < 0 {
@@ -35,24 +35,24 @@ extension UITableView {
         })
     }
 
-    public func registerNib<T: UITableViewCell>(_ aClass: T.Type) {
+    func registerNib<T: UITableViewCell>(_ aClass: T.Type) {
         let name = String(describing: aClass)
         let nib = UINib(nibName: name, bundle: nil)
         register(nib, forCellReuseIdentifier: name)
     }
 
-    public func registerClass<T: UITableViewCell>(_ aClass: T.Type) {
+    func registerClass<T: UITableViewCell>(_ aClass: T.Type) {
         let name = String(describing: aClass)
         register(aClass, forCellReuseIdentifier: name)
     }
 
-    public func registerNib<T: UITableViewHeaderFooterView>(_ aClass: T.Type) {
+    func registerNib<T: UITableViewHeaderFooterView>(_ aClass: T.Type) {
         let name = String(describing: aClass)
         let nib = UINib(nibName: name, bundle: nil)
         register(nib, forHeaderFooterViewReuseIdentifier: name)
     }
 
-    public func registerClass<T: UITableViewHeaderFooterView>(_ aClass: T.Type) {
+    func registerClass<T: UITableViewHeaderFooterView>(_ aClass: T.Type) {
         let name = String(describing: aClass)
         register(aClass, forHeaderFooterViewReuseIdentifier: name)
     }
@@ -60,7 +60,7 @@ extension UITableView {
     
 
     
-    public func dequeue<T: UITableViewCell>(_ aClass: T.Type) -> T! {
+    func dequeue<T: UITableViewCell>(_ aClass: T.Type) -> T! {
         let name = String(describing: aClass)
         guard let cell = dequeueReusableCell(withIdentifier: name) as? T else {
             fatalError("\(name) is not registed")
@@ -68,7 +68,7 @@ extension UITableView {
         return cell
     }
 
-    public func dequeue<T: UITableViewHeaderFooterView>(_ aClass: T.Type) -> T! {
+    func dequeue<T: UITableViewHeaderFooterView>(_ aClass: T.Type) -> T! {
         let name = String(describing: aClass)
         guard let cell = dequeueReusableHeaderFooterView(withIdentifier: name) as? T else {
             fatalError("\(name) is not registed")
@@ -78,7 +78,7 @@ extension UITableView {
 }
 
 extension UITableViewCell {
-    public func setSeparatorInsets(_ insets: UIEdgeInsets) {
+    func setSeparatorInsets(_ insets: UIEdgeInsets) {
         separatorInset = insets
         layoutMargins = insets
     }

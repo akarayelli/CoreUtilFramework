@@ -6,11 +6,11 @@ import Foundation
 
 public extension FileManager {
 
-    public static var document: URL {
+    static var document: URL {
         return self.default.document
     }
 
-    public var document: URL {
+    var document: URL {
         #if os(OSX)
             // On OS X it is, so put files in Application Support. If we aren't running
             // in a sandbox, put it in a subdirectory based on the bundle identifier
@@ -36,11 +36,11 @@ public extension FileManager {
 
 public extension FileManager {
 
-    public static func createDirectory(at directoryURL: URL) throws {
+    static func createDirectory(at directoryURL: URL) throws {
         return try self.default.createDirectory(at: directoryURL)
     }
 
-    public func createDirectory(at directoryUrl: URL) throws {
+    func createDirectory(at directoryUrl: URL) throws {
         let fileManager = FileManager.default
         var isDir: ObjCBool = false
         let fileExists = fileManager.fileExists(atPath: directoryUrl.path, isDirectory: &isDir)
@@ -55,22 +55,22 @@ public extension FileManager {
 
 public extension FileManager {
 
-    public static func deleteAllTemporaryFiles(path: String) throws {
+    static func deleteAllTemporaryFiles(path: String) throws {
         return try self.default.deleteAllTemporaryFiles()
     }
 
-    public func deleteAllTemporaryFiles() throws {
+    func deleteAllTemporaryFiles() throws {
         let contents = try contentsOfDirectory(atPath: NSTemporaryDirectory())
         for file in contents {
             try removeItem(atPath: NSTemporaryDirectory() + file)
         }
     }
 
-    public static func deleteAllDocumentFiles(path: String) throws {
+    static func deleteAllDocumentFiles(path: String) throws {
         return try self.default.deleteAllDocumentFiles()
     }
 
-    public func deleteAllDocumentFiles() throws {
+    func deleteAllDocumentFiles() throws {
         let documentPath = document.path
         let contents = try contentsOfDirectory(atPath: documentPath)
         for file in contents {

@@ -4,48 +4,48 @@ import Foundation
 
 public extension Bundle {
 
-    public var appName: String {
+    var appName: String {
         return string(for: "CFBundleDisplayName")
     }
 
-    public var appVersion: String {
+    var appVersion: String {
         return string(for: "CFBundleShortVersionString")
     }
 
-    public var appBuild: String {
+    var appBuild: String {
         return string(for: "CFBundleVersion")
     }
 
-    public var bundleId: String {
+    var bundleId: String {
         return string(for: "CFBundleIdentifier")
     }
     
-    public var serverURL: String {
+    var serverURL: String {
         return string(for: "ServerURL")
     }
     
 
-    public var pinedDomain: String {
+    var pinedDomain: String {
         return string(for: "SSLPinningDomain")
     }
     
     
-    public var secureCertificateName: String {
+    var secureCertificateName: String {
         return string(for: "SSLCertificateName")
     }
     
-    public var verifySSLCertificate: Bool{
+    var verifySSLCertificate: Bool{
         return bool(for: "VerifySSLCertificate")
     }
 
-    public var adMobAppId: String {
+    var adMobAppId: String {
         return string(for: "AdMod_APP_ID")
     }
     
-    public var databaseName: String {
+    var databaseName: String {
         return string(for: "DBName")
     }
-    public var schemes: [String] {
+    var schemes: [String] {
         guard let infoDictionary = Bundle.main.infoDictionary,
             let urlTypes = infoDictionary["CFBundleURLTypes"] as? [AnyObject],
             let urlType = urlTypes.first as? [String : AnyObject],
@@ -55,7 +55,7 @@ public extension Bundle {
         return urlSchemes
     }
 
-    public var mainScheme: String? {
+    var mainScheme: String? {
         return schemes.first
     }
 

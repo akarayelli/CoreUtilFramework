@@ -7,7 +7,7 @@ public protocol Selfie: CustomStringConvertible {}
 
 public extension Selfie {
 
-    public var description: String {
+    var description: String {
         let mirror = Mirror(reflecting: self)
         return "\(mirror.subjectType)( \(mirror.children.map({ "\($0!): \($1)"}).joined(separator: ", ")))"
     }

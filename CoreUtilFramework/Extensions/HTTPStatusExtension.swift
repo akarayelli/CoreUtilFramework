@@ -93,7 +93,7 @@ public enum HTTPStatus: Int {
         self.init(rawValue: code)
     }
 
-    public var code: Int {
+    var code: Int {
         return rawValue
     }
 }
@@ -262,7 +262,7 @@ extension HTTPStatus: CustomStringConvertible {
 
 
 extension URL {
-    public var imageRequest: NSMutableURLRequest {
+    var imageRequest: NSMutableURLRequest {
         let request = NSMutableURLRequest(url: self)
         request.addValue("image/*", forHTTPHeaderField: "Accept")
         return request

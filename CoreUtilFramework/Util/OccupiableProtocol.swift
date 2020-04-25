@@ -19,7 +19,7 @@ extension Dictionary: Occupiable { }
 extension Set: Occupiable { }
 
 public extension Optional where Wrapped: Occupiable {
-    public var isNilOrEmpty: Bool {
+    var isNilOrEmpty: Bool {
         switch self {
         case .none:
             return true
@@ -28,7 +28,7 @@ public extension Optional where Wrapped: Occupiable {
         }
     }
 
-    public var isNotNilNotEmpty: Bool {
+    var isNotNilNotEmpty: Bool {
         return !isNilOrEmpty
     }
 }

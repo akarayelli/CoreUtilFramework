@@ -11,7 +11,7 @@ import Foundation
 
 public extension SwiftyColor {
 
-    public convenience init(hex: String) {
+    convenience init(hex: String) {
         let hex = hex.trimmingCharacters(in: NSCharacterSet.alphanumerics.inverted)
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
@@ -29,7 +29,7 @@ public extension SwiftyColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
     
-    public convenience init(red: Int, green: Int, blue: Int) {
+    convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
         assert(blue >= 0 && blue <= 255, "Invalid blue component")
@@ -37,7 +37,7 @@ public extension SwiftyColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     }
     
-    public convenience init(rgb: Int) {
+    convenience init(rgb: Int) {
         self.init(
             red: (rgb >> 16) & 0xFF,
             green: (rgb >> 8) & 0xFF,
@@ -52,25 +52,25 @@ public extension SwiftyColor {
 #if !os(OSX)
 public extension SwiftyColor {
 
-    public var redComponent: Int {
+    var redComponent: Int {
         var r: CGFloat = 0
         getRed(&r, green: nil, blue: nil, alpha: nil)
         return Int(r * 255)
     }
 
-    public var greenComponent: Int {
+    var greenComponent: Int {
         var g: CGFloat = 0
         getRed(nil, green: &g, blue: nil, alpha: nil)
         return Int(g * 255)
     }
 
-    public var blueComponent: Int {
+    var blueComponent: Int {
         var b: CGFloat = 0
         getRed(nil, green: nil, blue: &b, alpha: nil)
         return Int(b * 255)
     }
 
-    public var alpha: CGFloat {
+    var alpha: CGFloat {
         var alpha: CGFloat = 0
         getRed(nil, green: nil, blue: nil, alpha: &alpha)
         return alpha
@@ -83,11 +83,11 @@ public extension SwiftyColor {
 
 public extension SwiftyColor {
 
-    public func lighter(amount: CGFloat = 0.25) -> SwiftyColor {
+    func lighter(amount: CGFloat = 0.25) -> SwiftyColor {
         return hueColorWithBrightnessAmount(amount: 1 + amount)
     }
 
-    public func darker(amount: CGFloat = 0.25) -> SwiftyColor {
+    func darker(amount: CGFloat = 0.25) -> SwiftyColor {
         return hueColorWithBrightnessAmount(amount: 1 - amount)
     }
 

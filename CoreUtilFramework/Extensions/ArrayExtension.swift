@@ -16,15 +16,15 @@ public extension Array {
 
 public extension Array where Element : Equatable {
 
-    public mutating func remove(object: Iterator.Element) -> Bool {
-        if let index = self.index(of: object) {
+    mutating func remove(object: Iterator.Element) -> Bool {
+        if let index = self.firstIndex(of: object) {
             self.remove(at: index)
             return true
         }
         return false
     }
 
-    public mutating func remove(objects: Element) {
+    mutating func remove(objects: Element) {
         for idx in self.indexes(of: objects).reversed() {
             self.remove(at: idx)
         }
@@ -36,7 +36,7 @@ public extension Array where Element : Equatable {
 
 public extension Array {
 
-    public func random() -> Element? {
+    func random() -> Element? {
         guard self.count > 0 else {
             return nil
         }
@@ -45,35 +45,35 @@ public extension Array {
         return self[index]
     }
 
-    public func get(index: Int) -> Element? {
+    func get(index: Int) -> Element? {
         return index >= 0 && index < count ? self[index] : nil
     }
 
-    public func takeMax(number: Int) -> Array {
+    func takeMax(number: Int) -> Array {
         return Array(self[0..<Swift.max(0, Swift.min(number, count))])
     }
     
-    public mutating func shuffle() {
+    mutating func shuffle() {
         for i in (1 ..< count).reversed() {
             let j = Int.random(max: i - 1)
             self.swapAt(i, j)
         }
     }
     
-    public func shuffled() -> [Element] {
+    func shuffled() -> [Element] {
         var array = self
         array.shuffle()
         return array
     }
     
-    public func toJSONString() -> String? {
+    func toJSONString() -> String? {
         guard let data = toJSONData() else {
             return nil
         }
         return String.init(data: data, encoding: .utf8)
     }
     
-    public func toJSONData() -> Data? {
+    func toJSONData() -> Data? {
         do {
             let data = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
             return data
@@ -86,7 +86,7 @@ public extension Array {
 
 public extension Array where Element : Equatable {
 
-    public func indexes(of object: Element) -> [Int] {
+    func indexes(of object: Element) -> [Int] {
         var indexes = [Int]()
         for index in 0..<self.count {
             if self[index] == object {
@@ -96,11 +96,11 @@ public extension Array where Element : Equatable {
         return indexes
     }
 
-    public func lastIndex(of object: Element) -> Int? {
+    func lastIndex(of object: Element) -> Int? {
         return indexes(of: object).last
     }
 
-    public func difference(with values: [Element]...) -> [Element] {
+    func difference(with values: [Element]...) -> [Element] {
         var result = [Element]()
         elements: for element in self {
             for value in values {
@@ -113,7 +113,7 @@ public extension Array where Element : Equatable {
         return result
     }
 
-    public func intersection(for values: [Element]...) -> Array {
+    func intersection(for values: [Element]...) -> Array {
         var result = self
         var intersection = Array()
 
@@ -132,7 +132,7 @@ public extension Array where Element : Equatable {
         return intersection
     }
 
-    public func union(values: [Element]...) -> Array {
+    func union(values: [Element]...) -> Array {
         var result = self
         for array in values {
             for value in array {
@@ -150,7 +150,7 @@ public extension Array where Element : Equatable {
 
 public extension Array {
 
-    public func reverse(index: Int) -> Int {
+    func reverse(index: Int) -> Int {
         return Swift.max(self.count - 1 - index, 0)
     }
 
@@ -160,7 +160,7 @@ public extension Array {
 
 public extension Array {
 
-    public func contains<T>(instanceOf object: T) -> Bool {
+    func contains<T>(instanceOf object: T) -> Bool {
         for item in self {
             if type(of: item) == type(of: object) {
                 return true
@@ -170,7 +170,7 @@ public extension Array {
     }
 
 
-    public func testAll(test: (Element) -> Bool) -> Bool {
+    func testAll(test: (Element) -> Bool) -> Bool {
         for item in self {
             if !test(item) {
                 return false
@@ -183,11 +183,11 @@ public extension Array {
 
 public extension Array where Element : Equatable {
 
-    public func contains(items: Element...) -> Bool {
-        return items.testAll { self.index(of: $0) ?? 0 >= 0 }
+    func contains(items: Element...) -> Bool {
+        return items.testAll { self.firstIndex(of: $0) ?? 0 >= 0 }
     }
 
-    public func contains(array: [Element]) -> Bool {
+    func contains(array: [Element]) -> Bool {
         for item in array {
             if self.contains(item) == false {
                 return false
