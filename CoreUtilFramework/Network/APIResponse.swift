@@ -2,9 +2,9 @@
 import Foundation
 
 public struct ApiError {
-    var error: NSError?
-    var message: String?
-    var code : String?
+    public var error: NSError?
+    public var message: String?
+    public var code : String?
     
     public init (){
     }
@@ -15,7 +15,7 @@ public struct ApiError {
         self.code = code
     }
     
-    var description: String {
+    public var description: String {
         if let error = error {
             return error.logicalErrorDescription
         }
@@ -27,11 +27,11 @@ public struct ApiError {
 }
 
 public struct ApiWarning {
-    var message: String?
+    public var message: String?
     
-    var code : Int?
+    public var code : Int?
     
-    var description: String {
+    public var description: String {
         if let message = message {
             return message
         }

@@ -3,7 +3,7 @@ import Foundation
 
 public struct Simulator {
 
-    static var isRunning: Bool = {
+    public static var isRunning: Bool = {
         #if targetEnvironment(simulator)
             return true
         #else

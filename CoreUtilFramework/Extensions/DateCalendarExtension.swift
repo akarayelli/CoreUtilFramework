@@ -146,8 +146,8 @@ public extension IntegerLiteralType {
 
 public struct DateTimeDelta {
 
-    var value: TimeInterval
-    var unit: NSCalendar.Unit
+    public var value: TimeInterval
+    public var unit: NSCalendar.Unit
 
     public init(_ value: TimeInterval, _ unit: NSCalendar.Unit) {
         self.value = value
@@ -162,7 +162,7 @@ public struct DateTimeDelta {
         return type(of: self).init(-self.value, self.unit)
     }
 
-    func after(_ date: Date) -> Date {
+    public func after(_ date: Date) -> Date {
         switch self.unit {
         case NSCalendar.Unit.year: return date.with(year: date.year + Int(self.value))
         case NSCalendar.Unit.month: return date.with(month: date.month + Int(self.value))
@@ -174,15 +174,15 @@ public struct DateTimeDelta {
         }
     }
 
-    func before(_ date: Date) -> Date {
+    public func before(_ date: Date) -> Date {
         return self.negativeDelta.after(date)
     }
 
-    var fromNow: Date {
+    public var fromNow: Date {
         return self.after(Date())
     }
 
-    var ago: Date {
+    public var ago: Date {
         return self.negativeDelta.fromNow
     }
 
