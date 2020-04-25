@@ -25,7 +25,7 @@ open class Reachability {
         return (isReachable && !needsConnection)
     }
     
-    static func getNetworkState() -> NetworkState{
+    public static func getNetworkState() -> NetworkState{
         if(isConnectedToNetwork()){
             return .online
         }
