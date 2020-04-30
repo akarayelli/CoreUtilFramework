@@ -10,8 +10,8 @@ import UIKit
 
 
 open class UIBaseTextField: UITextField,UITextFieldDelegate {
-    @IBInspectable var isPerformingAction:Bool=false
-    @IBInspectable var charLimit: Int = 0
+    @IBInspectable public var isPerformingAction:Bool=false
+    @IBInspectable public var charLimit: Int = 0
     
     
     public convenience init(){
