@@ -255,17 +255,23 @@ public extension String {
         
     }
     
-    func boldWordsInString(wordsToBold : [String], font: UIFont, boldFont: UIFont ) -> NSAttributedString{
+    func boldWordsInString(wordsToBold : [String], font: UIFont, boldFont: UIFont, isUnderlined: Bool? = false) -> NSAttributedString{
         
         let attributedString = NSMutableAttributedString(string: self, attributes:[NSAttributedString.Key.font:font])
         
         let boldFontAttribute = [NSAttributedString.Key.font: boldFont]
+        let underlineAttribute : [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.underlineStyle.rawValue): NSUnderlineStyle.single.rawValue
+        ]
         
         for stringToBold in wordsToBold
         {
             attributedString.addAttributes(boldFontAttribute, range: (self as NSString).range(of: stringToBold))
         }
         
+        if isUnderlined == true{
+            attributedString.addAttributes(underlineAttribute, range: (self as NSString).range(of: self))
+        }
         
         return attributedString
     }
