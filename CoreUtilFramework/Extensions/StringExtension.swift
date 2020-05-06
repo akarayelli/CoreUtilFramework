@@ -267,10 +267,10 @@ public extension String {
         for stringToBold in wordsToBold
         {
             attributedString.addAttributes(boldFontAttribute, range: (self as NSString).range(of: stringToBold))
-        }
-        
-        if isUnderlined == true{
-            attributedString.addAttributes(underlineAttribute, range: (self as NSString).range(of: self))
+            
+            if isUnderlined == true{
+                attributedString.addAttributes(underlineAttribute, range: (self as NSString).range(of: stringToBold))
+            }
         }
         
         return attributedString
