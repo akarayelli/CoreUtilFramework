@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
           #7.
           s.platform            = :ios, "9.0"
           #8.
-          s.source              = { :git => "https://github.com/akarayelli/CoreUtilFramework.git", :branch => "master", :tag => "4.0.4", :tag => s.version.to_s }
+          s.source              = { :git => "https://github.com/akarayelli/CoreUtilFramework.git", :branch => "master", :tag => s.version.to_s }
           #9.
           s.source_files     = "CoreUtilFramework", "CoreUtilFramework/**/*.{h,m,swift}"
     end
