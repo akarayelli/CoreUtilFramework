@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50F3B56824975FFD00135C5D /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F3B56724975FFD00135C5D /* StringProtocolExtension.swift */; };
 		AA10FF151F78E80700BC353E /* CoreUtilFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = AA10FF131F78E80700BC353E /* CoreUtilFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA10FF2E1F78E99400BC353E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10FF241F78E99400BC353E /* Then.swift */; };
 		AA10FF2F1F78E99400BC353E /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10FF251F78E99400BC353E /* Simulator.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50F3B56724975FFD00135C5D /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
 		AA10FF101F78E80700BC353E /* CoreUtilFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreUtilFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA10FF131F78E80700BC353E /* CoreUtilFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreUtilFramework.h; sourceTree = "<group>"; };
 		AA10FF141F78E80700BC353E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				AA3C99F02454F0A5005DA4BF /* UIViewExtension.swift */,
 				AA3C99F62454F0A6005DA4BF /* URLExtension.swift */,
 				AA3C99ED2454F0A5005DA4BF /* UserDefaultsExtension.swift */,
+				50F3B56724975FFD00135C5D /* StringProtocolExtension.swift */,
 			);
 			name = Extension;
 			path = Extensions;
@@ -442,6 +445,7 @@
 				AA3C9A052454F0A7005DA4BF /* NSObjectExtension.swift in Sources */,
 				AA3C9A062454F0A7005DA4BF /* NSRangeExtension.swift in Sources */,
 				AA10FF2E1F78E99400BC353E /* Then.swift in Sources */,
+				50F3B56824975FFD00135C5D /* StringProtocolExtension.swift in Sources */,
 				AA3C9A242454F0A7005DA4BF /* UIApplicationExtension.swift in Sources */,
 				AA3C9A192454F0A7005DA4BF /* DateExtension.swift in Sources */,
 				AA3C9A132454F0A7005DA4BF /* NSManagedObjectContextExtension.swift in Sources */,
@@ -616,7 +620,7 @@
 				INFOPLIST_FILE = CoreUtilFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 4.0.4;
+				MARKETING_VERSION = 4.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.karayelli.alican.CoreUtilFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -641,7 +645,7 @@
 				INFOPLIST_FILE = CoreUtilFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 4.0.4;
+				MARKETING_VERSION = 4.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.karayelli.alican.CoreUtilFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

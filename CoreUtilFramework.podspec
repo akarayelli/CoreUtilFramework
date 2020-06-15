@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
           #1.
           s.name               = "CoreUtilFramework"
           #2.
-          s.version            = "4.0.4"
+          s.version            = "4.0.5"
           #3.  
           s.summary         = "'CoreUtilFramework' is bunch of files that consists util classes for Swift language. Extensions, Delegates, Custom Componenets..."
           #4.

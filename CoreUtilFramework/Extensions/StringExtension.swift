@@ -202,6 +202,43 @@ public extension String {
         return false
     }
     
+    
+    func isValidTaxIdentityNumber() -> Bool{
+        if self.count == 10{
+            var x = [Int]()
+            var y = [Int]()
+            var result = 0
+            
+            for i in 0..<9{
+                guard let characterInt = Int("\(self[i])") else { return false }
+                let value = (characterInt + 9-i) % 10
+                x.append(value)
+                
+                let powInt = Int(truncating: NSDecimalNumber(decimal: pow(2, 9-i)))
+                var value2 = (value * powInt) % 9
+                y.append(value2)
+                
+                if value != 0 && value2 == 0 {
+                    value2 = 9
+                }
+                result += value2
+            }
+            
+            if result % 10 == 0{
+                result = 0
+            }
+            else{
+                result = (10 - (result % 10))
+            }
+            
+            guard let ninthCharacterInt = Int("\(self[9])") else { return false }
+            return (result == ninthCharacterInt)
+        }
+        else{
+            return false
+        }
+    }
+    
     func isEmpty() -> Bool!{
         if ( self == ""){
             return true
