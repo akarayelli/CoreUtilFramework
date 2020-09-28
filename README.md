@@ -3,7 +3,7 @@ Util classes for Swift language
 
 # CocoaPods
 
-For Versions >= Swift 5.0   pod ‘CoreUtilFramework’, :git => ‘https://github.com/akarayelli/CoreUtilFramework.git’, :tag => ‘4.0.4’
+For Versions >= Swift 5.0   pod ‘CoreUtilFramework’, :git => ‘https://github.com/akarayelli/CoreUtilFramework.git’, :tag => ‘4.0.8’
 
 For Versions >= Swift 4.2   pod ‘CoreUtilFramework’, :git => ‘https://github.com/akarayelli/CoreUtilFramework.git’, :tag => ‘3.0.2’
 

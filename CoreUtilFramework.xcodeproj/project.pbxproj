@@ -41,7 +41,6 @@
 		AA3C9A0E2454F0A7005DA4BF /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C99DF2454F0A4005DA4BF /* BoolExtension.swift */; };
 		AA3C9A0F2454F0A7005DA4BF /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C99E02454F0A4005DA4BF /* UISwitchExtension.swift */; };
 		AA3C9A102454F0A7005DA4BF /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C99E12454F0A4005DA4BF /* UIButtonExtension.swift */; };
-		AA3C9A112454F0A7005DA4BF /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C99E22454F0A4005DA4BF /* UIScrollViewExtension.swift */; };
 		AA3C9A122454F0A7005DA4BF /* HTTPStatusExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C99E32454F0A4005DA4BF /* HTTPStatusExtension.swift */; };
 		AA3C9A132454F0A7005DA4BF /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C99E42454F0A4005DA4BF /* NSManagedObjectContextExtension.swift */; };
 		AA3C9A142454F0A7005DA4BF /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C99E52454F0A4005DA4BF /* UIScreenExtension.swift */; };
@@ -115,7 +114,6 @@
 		AA3C99DF2454F0A4005DA4BF /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
 		AA3C99E02454F0A4005DA4BF /* UISwitchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchExtension.swift; sourceTree = "<group>"; };
 		AA3C99E12454F0A4005DA4BF /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		AA3C99E22454F0A4005DA4BF /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		AA3C99E32454F0A4005DA4BF /* HTTPStatusExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusExtension.swift; sourceTree = "<group>"; };
 		AA3C99E42454F0A4005DA4BF /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		AA3C99E52454F0A4005DA4BF /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 				AA3C99DB2454F0A4005DA4BF /* UIImageExtension.swift */,
 				AA3C99EC2454F0A5005DA4BF /* UILabelExtension.swift */,
 				AA3C99E52454F0A4005DA4BF /* UIScreenExtension.swift */,
-				AA3C99E22454F0A4005DA4BF /* UIScrollViewExtension.swift */,
 				AA3C99EF2454F0A5005DA4BF /* UIStackViewExtension.swift */,
 				AA3C99DC2454F0A4005DA4BF /* UIStoryboardExtension.swift */,
 				AA3C99E02454F0A4005DA4BF /* UISwitchExtension.swift */,
@@ -473,7 +470,6 @@
 				AA10FF4C1F78E9C900BC353E /* APIResponse.swift in Sources */,
 				AA10FF351F78E99400BC353E /* Injectable.swift in Sources */,
 				AA3C9A272454F0A7005DA4BF /* UIViewControllerExtension.swift in Sources */,
-				AA3C9A112454F0A7005DA4BF /* UIScrollViewExtension.swift in Sources */,
 				AA3C9A122454F0A7005DA4BF /* HTTPStatusExtension.swift in Sources */,
 				AA3C9A1B2454F0A7005DA4BF /* UILabelExtension.swift in Sources */,
 				AA3C9A2D2454F0A7005DA4BF /* NSErrorExtension.swift in Sources */,
@@ -620,7 +616,7 @@
 				INFOPLIST_FILE = CoreUtilFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 4.0.7;
+				MARKETING_VERSION = 4.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.karayelli.alican.CoreUtilFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -645,7 +641,7 @@
 				INFOPLIST_FILE = CoreUtilFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 4.0.7;
+				MARKETING_VERSION = 4.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.karayelli.alican.CoreUtilFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
