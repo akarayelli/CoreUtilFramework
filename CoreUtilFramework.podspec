@@ -8,13 +8,15 @@ Pod::Spec.new do |s|
           #4.
           s.homepage        = "https://github.com/akarayelli/CoreUtilFramework"
           #5.
-          s.license              = "MIT"
+          s.license      = { :type => "MIT", :file => "LICENSE" }
           #6.
           s.author               = "akarayelli"
           #7.
-          s.platform            = :ios, "9.0"
+          s.platform            = :ios, "10.0"
           #8.
           s.source              = { :git => "https://github.com/akarayelli/CoreUtilFramework.git", :branch => "master", :tag => s.version.to_s }
           #9.
           s.source_files     = "CoreUtilFramework", "CoreUtilFramework/**/*.{h,m,swift}"
+          #10
+          s.swift_version = '5.0'
     end
