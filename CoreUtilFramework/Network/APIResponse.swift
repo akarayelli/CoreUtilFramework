@@ -24,7 +24,8 @@ public struct ApiError {
         }
         return "ApiError"
     }
-    public func messageWithErrorCode(messageTemplate:String = "%@ (%@)")->String?{
+
+    public func messageWithErrorCode(messageTemplate: String = "%@ (%@)") -> String? {
         guard let message = message, let code = code else { return nil }
         return String(format: messageTemplate, message, code)
     }
