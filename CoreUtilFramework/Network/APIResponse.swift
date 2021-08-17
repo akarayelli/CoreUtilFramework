@@ -48,7 +48,7 @@ public struct ApiWarning {
     
     public init() {}
     
-    public func messageWithErrorCode(messageTemplate:String = "%@ (%@)")->String?{
+    public func messageWithCode(messageTemplate: String = "%@ (%@)") -> String? {
         guard let message = message, let code = code else { return nil }
         return String(format: messageTemplate, message, code)
     }
